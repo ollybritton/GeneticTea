@@ -13,10 +13,10 @@ To run the program, simply download the repo and `cd` into it, then run the comm
     python3 brew.py
 
 When it starts, it will generate 10 random cups of tea. It will show you these, giving each a unique
-name, brew time, milkyness and sweetener amount.
+name, brew time, milkiness and sweetener amount.
 
 Brew Time: How long the tea is brewed for in minutes.
-Milkyness: How milky your tea is, 0 = no milk and 1 = really milky.
+Milkiness: How milky your tea is, 0 = no milk and 1 = really milky.
 Sweeteners: How many sweeteners or sugars to put in the tea.
 
 When the program starts, you can either choose to use a previous "save", or generate a new set of
@@ -37,8 +37,6 @@ The program will then kill off the 5 least-scoring teas, and then "mutate" the r
 which is basically changing the above variables ever so slightly. You then need to drink the teas that
 are displayed afterwards. Repeat this process, until it gives you a final cup of tea – which should be the best!
 
-**Currently, you can only use copy and paste to use a previous save.**
-
 ___
 
 ## How it works.
@@ -54,7 +52,7 @@ Teas are stored in the following format:
       fitness: 0 by default, but a measure of how good it is,
       brew_time: Time to brew for, in minutes,
       sweeteners: Amount of sweeteners,
-      milkyness: How milky the tea is (0 = no milk, 1 = lots of milk)
+      milkiness: How milky the tea is (0 = no milk, 1 = lots of milk)
     }
 
 10 of these are "randomly" generated at the beginning, using the `initial_teas()` function, which itself is made using the `random_num(a, b, dp)`. `random_num()` is the same as doing `round( random.uniform(a,b), dp )`, but it looks cleaner.

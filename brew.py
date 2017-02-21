@@ -14,7 +14,7 @@ class colors:
     underline = '\033[4m'
     blue = '\033[94m'
 
-adjectives = ["Wonderous", "Heroic", "Bold", "Daring", "Epic", "Fearless", "Courageous", "Grand", "Gallent", "Gusty", "Nobel", "Dauntless", "Fire-Eating", "Dragon-Slaying", "Unafraid", "Lion-Hearted", "Triamphant"]
+adjectives = ["Wonderous", "Heroic", "Bold", "Daring", "Epic", "Fearless", "Courageous", "Grand", "Gallant", "Gusty", "Nobel", "Dauntless", "Fire-Eating", "Dragon-Slaying", "Unafraid", "Lion-Hearted", "Triamphant"]
 nouns = ["Brew", "Tea", "Cuppa", "Cup", "Blend", "Melange", "Medley", "Beverage", "Liquid"]
 
 base_tea = {
@@ -132,14 +132,14 @@ def show_teas(var):
         print("")
         print(colors.yellow + "– " + var[ keys[i] ]["name"] + ":" + colors.reset)
         print(colors.red + "\t– Brew Time: " + str(var[keys[i]]["brew_time"]) + colors.reset)
-        print(colors.red + "\t– Milkyness: " + str(var[keys[i]]["milk"]) + colors.reset)
+        print(colors.red + "\t– milkiness: " + str(var[keys[i]]["milk"]) + colors.reset)
         print(colors.red + "\t– Sweeteners: " + str(var[keys[i]]["sweeteners"]) + colors.reset)
         print(colors.red + "\t– Fitness: " + str(var[keys[i]]["fitness"]) + colors.reset)
         print("")
         time.sleep(0.2)
 
-    with open("saves.txt", "w") as text_file:
-        text_file.write( str(var) + "\n" )
+    with open("saves.txt", "a") as myfile:
+        myfile.write(str(var) + "\n")
 
     if len(var) != 1:
         print( colors.green + "Current python dictionary (copy it to save or find it in the saves.txt file):" + colors.reset)
@@ -199,11 +199,11 @@ def run():
         line()
 
         green("When it starts, it will generate 10 random cups of tea. It will show you these, giving each a unique")
-        green("name, brew time, milkyness and sweetener amount.")
+        green("name, brew time, milkiness and sweetener amount.")
         line()
 
         blue("Brew Time: How long the tea is brewed for in minutes.")
-        blue("Milkyness: How milky your tea is, 0 = no milk and 1 = really milky.")
+        blue("milkiness: How milky your tea is, 0 = no milk and 1 = really milky.")
         blue("Sweeteners: How many sweeteners or sugars to put in the tea.")
         line()
 
