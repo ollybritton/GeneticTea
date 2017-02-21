@@ -1,12 +1,14 @@
 # GeneticTea
 
-## Wha???
+## What?
 
 GeneticTea is a python script that uses the theory of evolution to generate the perfect cup of tea.
 
-## Prerequisites
+## Prerequisites.
 
-Make sure that you have `python3` and `numpy` installed on your system. You can install `numpy` [here](http://www.numpy.org/).
+Make sure that you have `python3` installed on your system, as I don't test with the `python` command.
+
+## How To & Quick Overview.
 
 To run the program, simply download the repo and `cd` into it, then run the command:
 
@@ -41,7 +43,7 @@ are displayed afterwards. Repeat this process, until it gives you a final cup of
 
 *Note: This is my first attempt at a genetic algorithm, so it's probably not very good.*
 
-### Data Structure
+### Data Structure.
 
 Teas are stored in the following format:
 
@@ -65,7 +67,7 @@ If you're interested, these are the bounds:
 
 The values shown are always the absolute value as well, as you can't brew a cup of tea for -3 minutes.
 
-### The Evolution
+### The Evolution.
 
 Evolution is done by killing off the least scoring `floor(x/2)` members of the population, and then mutating the remaining ones by a small factor.
 

@@ -2,7 +2,6 @@
 
 """ A genetic algorithm to brew the perfect cup of tea. """
 
-import numpy as np
 import random, heapq, math, time
 
 class colors:
