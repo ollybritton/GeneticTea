@@ -4,6 +4,10 @@
 
 GeneticTea is a python script that uses the theory of evolution to generate the perfect cup of tea.
 
+## Prerequisites
+
+Make sure that you have `python3` and `numpy` installed on your system. You can install `numpy` [here](http://www.numpy.org/).
+
 To run the program, simply download the repo and `cd` into it, then run the command:
 
     python3 brew.py
