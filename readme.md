@@ -37,8 +37,6 @@ The program will then kill off the 5 least-scoring teas, and then "mutate" the r
 which is basically changing the above variables ever so slightly. You then need to drink the teas that
 are displayed afterwards. Repeat this process, until it gives you a final cup of tea – which should be the best!
 
-___
-
 ## How it works.
 
 *Note: This is my first attempt at a genetic algorithm, so it's probably not very good.*
