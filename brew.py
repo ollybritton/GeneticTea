@@ -2,16 +2,32 @@
 
 """ A genetic algorithm to brew the perfect cup of tea. """
 
-import random, heapq, math, time
+import random, heapq, math, time, platform
 
-class colors:
-    green = '\033[92m'
-    yellow = '\033[93m'
-    red = '\033[91m'
-    reset = '\033[0m'
-    bold = '\033[1m'
-    underline = '\033[4m'
-    blue = '\033[94m'
+operating_system = platform.system()
+
+if operating_system == "Darwin" or operating_system == "Linux":
+
+    class colors:
+        green = '\033[92m'
+        yellow = '\033[93m'
+        red = '\033[91m'
+        reset = '\033[0m'
+        bold = '\033[1m'
+        underline = '\033[4m'
+        blue = '\033[94m'
+
+elif operating_system == "Windows": # Ensures Windows works.
+
+    class colors:
+        green = ''
+        yellow = ''
+        red = ''
+        reset = ''
+        bold = ''
+        underline = ''
+        blue = ''
+
 
 adjectives = ["Wonderous", "Heroic", "Bold", "Daring", "Epic", "Fearless", "Courageous", "Grand", "Gallant", "Gusty", "Nobel", "Dauntless", "Fire-Eating", "Dragon-Slaying", "Unafraid", "Lion-Hearted", "Triamphant"]
 nouns = ["Brew", "Tea", "Cuppa", "Cup", "Blend", "Melange", "Medley", "Beverage", "Liquid"]
@@ -130,8 +146,8 @@ def show_teas(var):
     for i in range(0, len(var)):
         print("")
         print(colors.yellow + "– " + var[ keys[i] ]["name"] + ":" + colors.reset)
-        print(colors.red + "\t– Brew Time: " + str(var[keys[i]]["brew_time"]) + colors.reset)
-        print(colors.red + "\t– milkiness: " + str(var[keys[i]]["milk"]) + colors.reset)
+        print(colors.red + "\t– Brew Time: " + str(math.round(var[keys[i]]["brew_time"])*10)/10 + colors.reset)
+        print(colors.red + "\t– Milkiness: " + str(math.round(var[keys[i]]["milk"])*10)/10 + colors.reset)
         print(colors.red + "\t– Sweeteners: " + str(var[keys[i]]["sweeteners"]) + colors.reset)
         print(colors.red + "\t– Fitness: " + str(var[keys[i]]["fitness"]) + colors.reset)
         print("")
