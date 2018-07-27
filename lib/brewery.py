@@ -3,9 +3,6 @@ import random
 import math
 from colorama import Fore, Style
 
-base_tea = {"name": "", "ingredient_a": "", "ingredient_b": "", "ingredient_c": "",
-            "amount_a": 0, "amount_b": 0, "amount_c": 0, "brew_time": 0, "fitness": 0}
-
 ingredients = ["peppermint", "peperina", "ginger", "apple slices", "lemon juice",
                "lemon zest", "orange juice", "orange zest",
                "honey", "chamomile", "cinnamon", "black pepper", "garlic",
