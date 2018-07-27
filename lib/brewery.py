@@ -6,17 +6,17 @@ from colorama import Fore, Style
 base_tea = {"name": "", "ingredient_a": "", "ingredient_b": "", "ingredient_c": "",
             "amount_a": 0, "amount_b": 0, "amount_c": 0, "brew_time": 0, "fitness": 0}
 
-ingredients = ["menta", "peperina", "jengibre", "trocitos de manzana", "jugo de limón",
-               "ralladura de limón", "jugo de naranja", "ralladura de naranja",
-               "miel", "manzanilla", "canela", "pimienta negra", "ajo",
-               "clavo de olor", "cucharadita de orégano", "romero"]
+ingredients = ["peppermint", "peperina", "ginger", "apple slices", "lemon juice",
+               "lemon zest", "orange juice", "orange zest",
+               "honey", "chamomile", "cinnamon", "black pepper", "garlic",
+               "clove", "oregano", "rosemary"]
 
 names = ["Coleridge", "Whitman", "Blake", "Thomas", "Frost", "Borges", "Cervantes",
          "Shakespeare", "Montaigne", "Vallejo", "Sun-Tzu", "Daniela", "Guevara",
          "Zapata", "Materno", "Beckford", "Torquato", "Otoño", "Invierno", "Verano",
          "RuPaul", "Bastos", "Aires claros", "Buena Mezcla", "Certidumbre"]
 
-pre_names = ["de ", "Gran ", "por ", "desde ", "para "]
+pre_names = ["de ", "Gran ", "por ", "desde ", "para "] # this are in spanish :)
 
 
 class Tea ():
