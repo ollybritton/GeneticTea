@@ -52,9 +52,9 @@ values, except the ingredients, are numbers from 0.1 to 1, where 1 is "very" or
 "a lot of" and 0.1 is "a little bit of" or "just a little of". 0.5 is
 "a regular ammount". For instance,
 
-4: 0.2
-5: 0.9
-6: 0.5
+    4: 0.2
+    5: 0.9
+    6: 0.5
 
 defines a tea with a bit of the second ingredient, a lot of the third ingredient
 and just the regular ammount of sweetness.
