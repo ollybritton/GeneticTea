@@ -10,18 +10,17 @@ I express my gratitud towards **ollybritton** for developing such a wonderful sc
 
 ## What's new about it?
 
-The original GeneticTea implemented the evolutionary model by reproducing all
-its conditions but one: the exchange of genes between an individual (a cup of tea)
-and another to produce offspring of the next generation. Instead, the original
-program only mutated by a small factor the better cup of teas and removed the less
-adapted ones. In other words, the original program lacked of chromosomatic exchange
-and actual reproduction, while that is now implemented along with the small
-mutation factor.
+The original GeneticTea implemented the evolutionary model by perfectily reproducing all
+its conditions. I found, nevertheless, that one of them was missing: the exchange of genes 
+between an individual (a cup of tea) and another to produce offspring of the next generation. 
+Instead, the original program only mutated by a small factor the better cup of teas and removed the less
+adapted ones. In other words, chromosomatic exchange and actual reproduction were not reproduced.
+Both this things are now implemented.
 
 Also some properties of the teas were added while others were removed. Teas no longer
-have milkiness, are now composed by three ingredients apart of the sack of tea,
-and each ingredient with on its own ammount. This will produce more complex and
-tasty teas.
+have milkiness, are now composed by three ingredients (apart of the obvious sack of tea),
+and each ingredient is defined with its own ammount. This will produce more complex and
+tasty teas!
 
 ## How to
 
