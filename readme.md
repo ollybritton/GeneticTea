@@ -34,20 +34,22 @@ Each tea contains a chromosome, which is a set of gens. This set of genes
 define the sweetness, brewing time and ingredients of the tea. This chromosomes
 are stored in the following format:
 
-  {
-    0: first ingredient of the tea,
-    1: second ingredient of the tea,
-    2: third ingredient of the tea,
-    3: amount of the first ingredient,
-    4: amount of the second ingredient,
-    5: amouunt of the third ingredient,
-    6: sweetness of the tea,
-    7: brew time of the tea
-  }
+    {
+      0: first ingredient of the tea,
+      1: second ingredient of the tea,
+      2: third ingredient of the tea,
+      3: amount of the first ingredient,
+      4: amount of the second ingredient,
+      5: amouunt of the third ingredient,
+      6: sweetness of the tea,
+      7: brew time of the tea
+     }
 
-where 0, 1, 2... are the genes, each defining what follows them. All of this
+
+
+where each value is a gen that defines what follows it. All of this
 values, except the ingredients, are numbers from 0.1 to 1, where 1 is "very" or
-"a lot of" and 0.1 is "a little bit of" or "just a little of" and 0.5 is
+"a lot of" and 0.1 is "a little bit of" or "just a little of". 0.5 is
 "a regular ammount". For instance,
 
 4: 0.2
