@@ -30,7 +30,7 @@ To run the program, download the repo and `cd` into it. Then run the command:
 
 ## How it works
 
-Each tea contains a chromosome, which is a set of gens. This set of genes
+Each tea contains a chromosome, which is a set of genes. This set of genes
 define the sweetness, brewing time and ingredients of the tea. A chromosome
 is defined in the following format:
 
