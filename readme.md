@@ -2,83 +2,80 @@
 
 ## What?
 
-GeneticTea is a python script that uses the theory of evolution to generate the perfect cup of tea.
+GeneticTea is a python script that reproduces the evolutionary model to generate
+the optimal cup of tea. It's completely based on a python script with the same name
+developed by ollybritton. This is a link to the original GeneticTea.
 
-## Prerequisites.
+## What's new about it?
 
-Make sure that you have `python3` installed on your system, as I don't test with the `python` command.
+The original GeneticTea implemented the evolutionary model by reproducing all
+its conditions but one: the exchange of genes between an individual (a cup of tea)
+and another to produce offspring of the next generation. Instead, the original
+program only mutated by a small factor the better cup of teas and removed the less
+adapted ones. In other words, the original program lacked of chromosomatic exchange
+and actual reproduction, while that is now implemented along with the small
+mutation factor.
 
-## How To & Quick Overview.
+Also some properties of the teas were added while others were removed. Teas no longer
+have milkiness, are now composed by three ingredients apart of the sack of tea,
+and each ingredient with on its own ammount. This will produce more complex and
+tasty teas.
 
-To run the program, simply download the repo and `cd` into it, then run the command:
+## How to
 
-    python3 brew.py
+To run the program, download the repo and `cd` into it. Then run the command:
 
-When it starts, it will generate 10 random cups of tea. It will show you these, giving each a unique
-name, brew time, milkiness and sweetener amount.
+    python3 natural_selection.py
 
-Brew Time: How long the tea is brewed for in minutes.
-Milkiness: How milky your tea is, 0 = no milk and 1 = really milky.
-Sweeteners: How many sweeteners or sugars to put in the tea.
+## How it works
 
-When the program starts, you can either choose to use a previous "save", or generate a new set of
-teas. Using a save just means copying and pasting a previous dictionary from the `saves.txt` file.
-Once it's generated the teas, you need to score the teas and keep a track of these scorings.
-You should do something like this:
+Each tea contains a chromosome, which is a set of gens. This set of genes
+define the sweetness, brewing time and ingredients of the tea. This chromosomes
+are stored in the following format:
 
-Tea 1: 8/10, Tea 2: 5/10, Tea 3: 9/10...
+  {
+    0: first ingredient of the tea,
+    1: second ingredient of the tea,
+    2: third ingredient of the tea,
+    3: amount of the first ingredient,
+    4: amount of the second ingredient,
+    5: amouunt of the third ingredient,
+    6: sweetness of the tea,
+    7: brew time of the tea
+  }
 
-Now you need to type these into the computer, in the following format:
+where 0, 1, 2... are the genes, each defining what follows them. All of this
+values, except the ingredients, are numbers from 0.1 to 1, where 1 is "very" or
+"a lot of" and 0.1 is "a little bit of" or "just a little of" and 0.5 is
+"a regular ammount". For instance,
 
-[8,5,9...]
-You can also do things like [0.8, 0.5, 0.9] and [8.2, 5.8, 9.3]
+4: 0.2
+5: 0.9
+6: 0.5
 
-*Note: This needs to be done for every tea, or it will give an error.*
+defines a tea with a bit of the second ingredient, a lot of the third ingredient
+and just the regular ammount of sweetness.
 
-The program will then kill off the 5 least-scoring teas, and then "mutate" the remaining ones,
-which is basically changing the above variables ever so slightly. You then need to drink the teas that
-are displayed afterwards. Repeat this process, until it gives you a final cup of tea – which should be the best!
+Firstly, an initial set of teas (the initial population) is generated, each tea
+with randomly generated chromosomes and thus different ingredients and qualities.
+After trying the teas, you are to rank them from 0 to 9, where 0 is disgusting
+and 9 is perfect. You are to input your each value separated by a comma,
 
-## How it works.
+    n,m,x,y...
 
-*Note: This is my first attempt at a genetic algorithm, so it's probably not very good.*
+where the first value corresponds to the first tea, the second value to the second
+tea, and so on.
 
-### Data Structure.
+After the initial population was ranked by you, the 5 superior teas will
+reproduce between themselves, crossing their genes randomly with one another,
+thus producing an offspring. This offspring passes also through a very minor
+mutation process which is likely to change some of its values. When this is over,
+you'll be showned the offspring as a new set of teas. This second generation
+will pass through the same process: ranking, crossover and mutation, to produce
+a new generation, until this repeating process boils down to one optimal cup
+of tea.
 
-Teas are stored in the following format:
-
-    {
-      name: A randomly generated name,
-      fitness: 0 by default, but a measure of how good it is,
-      brew_time: Time to brew for, in minutes,
-      sweeteners: Amount of sweeteners,
-      milkiness: How milky the tea is (0 = no milk, 1 = lots of milk)
-    }
-
-10 of these are "randomly" generated at the beginning, using the `initial_teas()` function, which itself is made using the `random_num(a, b, dp)`. `random_num()` is the same as doing `round( random.uniform(a,b), dp )`, but it looks cleaner.
-
-*I say "randomly", because I have put some bounds on a few of the variables. For example, a tea that is brewed for 10 seconds isn't going to taste very good.*
-
-If you're interested, these are the bounds:
-
-- 1 <= `brew_time` <= 5
-- 0.2 <= `milk` <= 1
-- 1 <= `sweeteners` <= 3
-
-The values shown are always the absolute value as well, as you can't brew a cup of tea for -3 minutes.
-
-### The Evolution.
-
-Evolution is done by killing off the least scoring `floor(x/2)` members of the population, and then mutating the remaining ones by a small factor.
-
-*Note: The final killing doesn't involve a mutation, as it may ruin the tea you just chose.*
-
-Once again, here are the bounds for the variance:
-
-- -0.5 <= `brew_variance` <= 0.5
-- -0.2 <= `milk_variance` <= 0.2
-- -1 <= `sweeteners` <= 1
-
-Also, the values for `brew` and `milk` are limited to `1dp`, but `sweeteners` is always an integer (but it's type is still a float).
-
-The change can be applied to a single tea using the `mutate(tea)` function, and you can mutate the entire dictionary of teas with `do_generation()`.
+The process is slow because it requires a human to taste the teas in order to
+rank them, i.e. it is not capable of recognizing the fitness of an individual
+of the population by itself. Nevertheless, depending on how many teas per day
+you drink, you can easily reach the optimal tea in a week or two.
