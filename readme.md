@@ -6,6 +6,8 @@ GeneticTea is a python script that reproduces the evolutionary model to generate
 the optimal cup of tea. It's completely based on a python script with the same name
 developed by ollybritton. This is a link to the original [GeneticTea](https://github.com/ollybritton/GeneticTea) script.
 
+I express my gratitud towards ollybritton for developing such a wonderful script and also making it public here on GitHub for all of us to see, learn from and modifiy.
+
 ## What's new about it?
 
 The original GeneticTea implemented the evolutionary model by reproducing all
