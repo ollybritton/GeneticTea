@@ -62,7 +62,7 @@ and just the regular ammount of sweetness.
 Firstly, an initial set of teas (the initial population) is generated, each tea
 with randomly generated chromosomes and thus different ingredients and qualities.
 After trying the teas, you are to rank them from 0 to 9, where 0 is disgusting
-and 9 is perfect. You are to input your each value separated by a comma,
+and 9 is perfect. You are to input value separated by a comma,
 
     n,m,x,y...
 
