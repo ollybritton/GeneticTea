@@ -10,7 +10,7 @@ I express my gratitud towards **ollybritton** for developing such a wonderful sc
 
 ## What's new about it?
 
-The original GeneticTea implemented the evolutionary model by perfectly reproducing all
+The original GeneticTea implemented the evolutionary model by perfectly reproducing nearly all
 its conditions. I found, nevertheless, that one of them was missing: the exchange of genes 
 between an individual (a cup of tea) and another to produce offspring of the next generation. 
 Instead, the original program only mutated by a small factor the better cup of teas and removed the less
