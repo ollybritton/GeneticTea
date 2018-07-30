@@ -12,9 +12,6 @@ def natural_selection(population):
     # la nueva generación serán los x especímenes con la puntuación más alta,
     # donde x representa el tamaño de la nueva generación (x = cur_gen / 2).
 
-    for i in new_generation:
-        print(i)
-
     population.generation = new_generation
 
 
@@ -28,13 +25,20 @@ def main():
         litter = brewery.Population()
         generation_num = 1
 
-        while len(litter.generation) > 1:
+        while True:  # while the optimal tea is not breed.
 
             print("\n -------- GENERATION " + str(generation_num) + " --------\n")
+
+            if len(litter.generation) <= 1:
+                break
+
             litter.display_population()
             litter.rank_population()
             natural_selection(litter)
             litter.crossover()
+            generation_num += 1
+
+        litter.optimal_tea()
 
 
 main()
