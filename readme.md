@@ -99,7 +99,20 @@ will pass through the same process: ranking, crossover and mutation, to produce
 a new generation, until this repeating process boils down to one optimal cup
 of tea.
 
+As it was proven years ago, genetic mutation -and this, though can be explained
+through natural selection itself at a minor scale, is a wonder of nature-
+is very likely to happen on those genes that define aspects of the specimen
+that are not crucial to life, but very unlikely for those that are decisive to it.
+For example, we find a wide variety of hair colors and hair colors, but very similar,
+nearly identical hearts and lungs. This is reproduced in the program. Those crucial
+factors of our teas, which I consider to be their ingredients, can mutate,
+though it's very unlikely for that to happen; while the ammount of each ingredient or the sweetness 
+of the tea are much more likely to change.
+
 The process is slow because it requires a human to taste the teas in order to
 rank them, i.e. it is not capable of recognizing the fitness of an individual
 of the population by itself. Nevertheless, depending on how many teas per day
 you drink, you can easily reach the optimal tea in a week or two.
+
+(To my own suprise and everyone else's, I found a use for that year I studied
+anthropology in college!)
