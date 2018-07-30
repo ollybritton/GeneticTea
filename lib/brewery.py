@@ -83,6 +83,7 @@ class Population ():
     def __init__(self):
 
         self.generation = self.cast_tea_generation()
+        self.generation_num = 1
 
     def display_population(self):
 
@@ -150,10 +151,10 @@ class Population ():
         tea_rates = []
 
         rating = input(Fore.GREEN + """     Rate the teas with values from 0 to 9,
-        including decimals, such as 6.3 or 7.5. Write each value separated only
+        where 0 is disgusting and 9 is perfect. Write each value separated only
         by a coma (no space), like n,m,x,y... and so. Make sure you rate every tea!
 
-        Press e to exit at any time. The current generation of teas will be stored
+        Press "e" to exit at any time. The current generation of teas will be stored
         and you'll be able to pick up from where you left it whenever you want!\n\n""")
 
         rating = rating.replace(",", "")

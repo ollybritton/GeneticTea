@@ -1,6 +1,7 @@
 import math
 from lib import brewery
 from colorama import Fore
+import pickle
 
 
 def natural_selection(population):
@@ -15,30 +16,51 @@ def natural_selection(population):
     population.generation = new_generation
 
 
+def save_population(population):
+
+    with open('save', 'wb') as f:
+        pickle.dump(population, f)
+        print("\n\n POPULATION SAVED \n\n")
+
+
+def load_population():
+
+    with open('save', "rb") as f:
+        population = pickle.load(f)
+        print("\n\n POPULATION LOADED \n\n")
+
+    return population
+
+
 def main():
 
     choise = input(Fore.GREEN + """Do you have a generation brewing already?
-    Type 'y' to load the last generation or n to start a new one.""")
+    Type 'y' to load the last generation or "n" to start a new one.""")
 
     if choise is "n":
 
         litter = brewery.Population()
-        generation_num = 1
 
-        while True:  # while the optimal tea is not breed.
+    if choise is "y":
 
-            print("\n -------- GENERATION " + str(generation_num) + " --------\n")
+        litter = load_population()
 
-            if len(litter.generation) <= 1:
-                break
+    while True:  # while the optimal tea is not breed.
 
-            litter.display_population()
-            litter.rank_population()
-            natural_selection(litter)
-            litter.crossover()
-            generation_num += 1
+        print("\n -------- GENERATION " + str(litter.generation_num) + " --------\n")
 
-        litter.optimal_tea()
+        save_population(litter)
+
+        if len(litter.generation) <= 1:
+            break
+
+        litter.display_population()
+        litter.rank_population()
+        natural_selection(litter)
+        litter.crossover()
+        litter.generation_num += 1
+
+    litter.optimal_tea()
 
 
 main()
